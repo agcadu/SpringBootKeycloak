@@ -1,0 +1,16 @@
+D:\cursos\SpringBootKeycloak\src\main\java\com\Spring\Keycloak\response\ResponseRest.java
+D:\cursos\SpringBootKeycloak\src\main\java\com\Spring\Keycloak\SpringBootKeycloakApplication.java
+D:\cursos\SpringBootKeycloak\src\main\java\com\Spring\Keycloak\service\KeycloakServiceImpl.java
+D:\cursos\SpringBootKeycloak\src\main\java\com\Spring\Keycloak\controller\KeycloakController.java
+D:\cursos\SpringBootKeycloak\src\main\java\com\Spring\Keycloak\controller\PersonController.java
+D:\cursos\SpringBootKeycloak\src\main\java\com\Spring\Keycloak\response\PersonResponseRest.java
+D:\cursos\SpringBootKeycloak\src\main\java\com\Spring\Keycloak\repositories\IPersonRepository.java
+D:\cursos\SpringBootKeycloak\src\main\java\com\Spring\Keycloak\service\IKeycloakService.java
+D:\cursos\SpringBootKeycloak\src\main\java\com\Spring\Keycloak\response\PersonResponse.java
+D:\cursos\SpringBootKeycloak\src\main\java\com\Spring\Keycloak\util\KeycloakProvider.java
+D:\cursos\SpringBootKeycloak\src\main\java\com\Spring\Keycloak\config\JwtAuthenticationConverter.java
+D:\cursos\SpringBootKeycloak\src\main\java\com\Spring\Keycloak\config\SecurityConfig.java
+D:\cursos\SpringBootKeycloak\src\main\java\com\Spring\Keycloak\service\PersonServiceImpl.java
+D:\cursos\SpringBootKeycloak\src\main\java\com\Spring\Keycloak\dto\UserDTO.java
+D:\cursos\SpringBootKeycloak\src\main\java\com\Spring\Keycloak\model\PersonEntity.java
+D:\cursos\SpringBootKeycloak\src\main\java\com\Spring\Keycloak\service\IPersonService.java

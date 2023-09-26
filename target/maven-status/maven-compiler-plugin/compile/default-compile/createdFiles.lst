@@ -1,0 +1,17 @@
+com\Spring\Keycloak\controller\KeycloakController.class
+com\Spring\Keycloak\response\PersonResponseRest.class
+com\Spring\Keycloak\response\ResponseRest.class
+com\Spring\Keycloak\service\KeycloakServiceImpl.class
+com\Spring\Keycloak\config\SecurityConfig.class
+com\Spring\Keycloak\service\PersonServiceImpl.class
+com\Spring\Keycloak\response\PersonResponse.class
+com\Spring\Keycloak\SpringBootKeycloakApplication.class
+com\Spring\Keycloak\controller\PersonController.class
+com\Spring\Keycloak\dto\UserDTO$UserDTOBuilder.class
+com\Spring\Keycloak\repositories\IPersonRepository.class
+com\Spring\Keycloak\util\KeycloakProvider.class
+com\Spring\Keycloak\model\PersonEntity.class
+com\Spring\Keycloak\service\IKeycloakService.class
+com\Spring\Keycloak\dto\UserDTO.class
+com\Spring\Keycloak\service\IPersonService.class
+com\Spring\Keycloak\config\JwtAuthenticationConverter.class
