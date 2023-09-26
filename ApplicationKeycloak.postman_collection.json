@@ -1,0 +1,384 @@
+{
+	"info": {
+		"_postman_id": "e8fc5c47-c342-4c4a-8c7b-d813d4538d92",
+		"name": "ApplicationKeycloak",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24393158",
+		"_collection_link": "https://lunar-crater-546608.postman.co/workspace/Team-Workspace~09b7adc2-4999-4880-8509-cbaed4e92cc0/collection/24393158-e8fc5c47-c342-4c4a-8c7b-d813d4538d92?action=share&source=collection_link&creator=24393158"
+	},
+	"item": [
+		{
+			"name": "obtener token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "spring-client-api-rest",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "pepe.perez",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "I57vUsZLqAiUZtPacD2e253xUfyHWkal",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9090/realms/spring-boot-realm-dev/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"realms",
+						"spring-boot-realm-dev",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar todos los usuarios en el realm",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUM1U2WDItNG82RXFTZV9TVE9ZZGk3a1E3ZmtPY2RXVUZDNnBVNkZHaEtVIn0.eyJleHAiOjE2OTU2NDExMzIsImlhdCI6MTY5NTY0MDgzMiwianRpIjoiN2MwMmJhYTUtYzgxZS00MjExLTk5YWMtZTEyOTg2ZjRhNThkIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDkwL3JlYWxtcy9zcHJpbmctYm9vdC1yZWFsbS1kZXYiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiODJiYmU1YTMtYWU4My00NjY3LTliODgtMzg2M2Y0ZjRhNDUwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic3ByaW5nLWNsaWVudC1hcGktcmVzdCIsInNlc3Npb25fc3RhdGUiOiI1OGRkMmU5Ni1mOTZkLTQ3NDktYTYxNS0wOGFjOTRiN2Q2YTUiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1zcHJpbmctYm9vdC1yZWFsbS1kZXYiLCJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsic3ByaW5nLWNsaWVudC1hcGktcmVzdCI6eyJyb2xlcyI6WyJhZG1pbl9jbGllbnRfcm9sZSJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwic2lkIjoiNThkZDJlOTYtZjk2ZC00NzQ5LWE2MTUtMDhhYzk0YjdkNmE1IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJKb3NlIEdhcmNpYSIsInByZWZlcnJlZF91c2VybmFtZSI6Impvc2UiLCJnaXZlbl9uYW1lIjoiSm9zZSIsImZhbWlseV9uYW1lIjoiR2FyY2lhIiwiZW1haWwiOiJqb3NlQGdtYWlsLmNvbSJ9.VvzF7XmU7W9WhgNwYzngjMVl4yemV1qGicfYMbgOnO-lvu0UYRr0suOjO_qmOuSt5OXlDIrra9For_Tpa2qCa4GizemQ_FuoTjA5FpG_GqQsHkoN-TmjurYiyRVIneMsw76v_CU5olKf8ZcJANQPq3YK-u5wf29Pg79yz2KAGCrPwsSmIMpwQ9xfUBg-9a27h0qU-QqctHPH49UI364fQkLfq4lsUfRIMmbMx0r-8bOvEHlxmcG57vESO0gXw8EBg2RkHOa-H1iG-QZSrXOjOu_RaGDZoQYL-vjYDY5we1aFYgW_jV9049HrpjbONavCcxxJ-iXjUZay4wOAyWN2qA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/admin/realms/spring-boot-realm-dev/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"admin",
+						"realms",
+						"spring-boot-realm-dev",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar todos los usuarios",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUM1U2WDItNG82RXFTZV9TVE9ZZGk3a1E3ZmtPY2RXVUZDNnBVNkZHaEtVIn0.eyJleHAiOjE2OTU2NDExMzIsImlhdCI6MTY5NTY0MDgzMiwianRpIjoiN2MwMmJhYTUtYzgxZS00MjExLTk5YWMtZTEyOTg2ZjRhNThkIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDkwL3JlYWxtcy9zcHJpbmctYm9vdC1yZWFsbS1kZXYiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiODJiYmU1YTMtYWU4My00NjY3LTliODgtMzg2M2Y0ZjRhNDUwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic3ByaW5nLWNsaWVudC1hcGktcmVzdCIsInNlc3Npb25fc3RhdGUiOiI1OGRkMmU5Ni1mOTZkLTQ3NDktYTYxNS0wOGFjOTRiN2Q2YTUiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1zcHJpbmctYm9vdC1yZWFsbS1kZXYiLCJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsic3ByaW5nLWNsaWVudC1hcGktcmVzdCI6eyJyb2xlcyI6WyJhZG1pbl9jbGllbnRfcm9sZSJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwic2lkIjoiNThkZDJlOTYtZjk2ZC00NzQ5LWE2MTUtMDhhYzk0YjdkNmE1IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJKb3NlIEdhcmNpYSIsInByZWZlcnJlZF91c2VybmFtZSI6Impvc2UiLCJnaXZlbl9uYW1lIjoiSm9zZSIsImZhbWlseV9uYW1lIjoiR2FyY2lhIiwiZW1haWwiOiJqb3NlQGdtYWlsLmNvbSJ9.VvzF7XmU7W9WhgNwYzngjMVl4yemV1qGicfYMbgOnO-lvu0UYRr0suOjO_qmOuSt5OXlDIrra9For_Tpa2qCa4GizemQ_FuoTjA5FpG_GqQsHkoN-TmjurYiyRVIneMsw76v_CU5olKf8ZcJANQPq3YK-u5wf29Pg79yz2KAGCrPwsSmIMpwQ9xfUBg-9a27h0qU-QqctHPH49UI364fQkLfq4lsUfRIMmbMx0r-8bOvEHlxmcG57vESO0gXw8EBg2RkHOa-H1iG-QZSrXOjOu_RaGDZoQYL-vjYDY5we1aFYgW_jV9049HrpjbONavCcxxJ-iXjUZay4wOAyWN2qA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/keycloak/user/search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"keycloak",
+						"user",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar usuario por nombre",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJIODZhY0UyUnJ1UHBjcmdmcHpRaUNCUjhtTDBMLTV0Mm9KbFUxYVFLbXZBIn0.eyJleHAiOjE2OTUzMjE0MTgsImlhdCI6MTY5NTMyMTExOCwianRpIjoiZjEwZDY3MWYtNGM5MC00MDYyLThmN2ItNzI2ZmUxOWQ0ZGYzIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDkwL3JlYWxtcy9zcHJpbmctYm9vdC1yZWFsbS1kZXYiLCJhdWQiOlsicmVhbG0tbWFuYWdlbWVudCIsImFjY291bnQiXSwic3ViIjoiZjhlNjA0MmEtN2MyNi00ZTZmLWI1ZmItYjczNzc1ODI5Y2QwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic3ByaW5nLWNsaWVudC1hcGktcmVzdCIsInNlc3Npb25fc3RhdGUiOiI1ZTE5N2QyMy0zYTI0LTRhMDgtYTA4NS0wMmMzMDFmNDgyYWYiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1zcHJpbmctYm9vdC1yZWFsbS1kZXYiLCJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsic3ByaW5nLWNsaWVudC1hcGktcmVzdCI6eyJyb2xlcyI6WyJhZG1pbl9jbGllbnRfcm9sZSJdfSwicmVhbG0tbWFuYWdlbWVudCI6eyJyb2xlcyI6WyJtYW5hZ2UtdXNlcnMiLCJ2aWV3LXVzZXJzIiwicXVlcnktZ3JvdXBzIiwicXVlcnktdXNlcnMiXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6IjVlMTk3ZDIzLTNhMjQtNGEwOC1hMDg1LTAyYzMwMWY0ODJhZiIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiUGVwZSBQZXJleiIsInByZWZlcnJlZF91c2VybmFtZSI6InBlcGUucGVyZXoiLCJnaXZlbl9uYW1lIjoiUGVwZSIsImZhbWlseV9uYW1lIjoiUGVyZXoiLCJlbWFpbCI6InBlcGVAZ21haWwuY29tIn0.Yf5-YsijCn3gZm5plLGire142P6SMJRJkfExERT724KncKwoGmVacr64KGJqzfdamPp4u61xblIkdSwAAb40I6FwNxO0eeEpgr6bi055uzJC_aBSWGphYVLaBJYWo0VOtAhIlliF7RDmBZlW7t9icOQLBKI2GETg0_f9hG0lYkqKf_bI-4NTyHzCODDiHNwQE9t7lrTnFXYAxIli-fH9USa8Id8rf6SFEOJbxbA8VcBrI7Q_9wNoeE2jjxefxIx7CgTzhNfDuLCAPLGycCyMWA5oipKxDfMiI9TW9exw0XpzrcrdceD_H_GiZAkQnGdVS86BNxH1wR9_EeQzmkgP7Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/keycloak/user/search/pepe.perez",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"keycloak",
+						"user",
+						"search",
+						"pepe.perez"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJIODZhY0UyUnJ1UHBjcmdmcHpRaUNCUjhtTDBMLTV0Mm9KbFUxYVFLbXZBIn0.eyJleHAiOjE2OTUzMjE4MzIsImlhdCI6MTY5NTMyMTUzMiwianRpIjoiMjdlNDJlYWQtZmQyZi00MmI0LTgwMWMtOWU4NDMyYzNiNjA2IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDkwL3JlYWxtcy9zcHJpbmctYm9vdC1yZWFsbS1kZXYiLCJhdWQiOlsicmVhbG0tbWFuYWdlbWVudCIsImFjY291bnQiXSwic3ViIjoiZjhlNjA0MmEtN2MyNi00ZTZmLWI1ZmItYjczNzc1ODI5Y2QwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic3ByaW5nLWNsaWVudC1hcGktcmVzdCIsInNlc3Npb25fc3RhdGUiOiI4OWFjOTJkMi1mZWQ5LTQxZWUtOGYzMi1iZmFmNjczODRjYzQiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1zcHJpbmctYm9vdC1yZWFsbS1kZXYiLCJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsic3ByaW5nLWNsaWVudC1hcGktcmVzdCI6eyJyb2xlcyI6WyJhZG1pbl9jbGllbnRfcm9sZSJdfSwicmVhbG0tbWFuYWdlbWVudCI6eyJyb2xlcyI6WyJtYW5hZ2UtdXNlcnMiLCJ2aWV3LXVzZXJzIiwicXVlcnktZ3JvdXBzIiwicXVlcnktdXNlcnMiXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6Ijg5YWM5MmQyLWZlZDktNDFlZS04ZjMyLWJmYWY2NzM4NGNjNCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiUGVwZSBQZXJleiIsInByZWZlcnJlZF91c2VybmFtZSI6InBlcGUucGVyZXoiLCJnaXZlbl9uYW1lIjoiUGVwZSIsImZhbWlseV9uYW1lIjoiUGVyZXoiLCJlbWFpbCI6InBlcGVAZ21haWwuY29tIn0.S2LbB9BhKbeuZo8s-za37Kkd9YfmmQ-zvvZwGXnHkQmmI7h4JxLyZAKpGs8ncuejY6g8D8RoOs8Nj3htrgMSFslbyPo14gL1rg_H9mDqcbZ2HyZIdaz6qXqGBybjsP2tP_RqLzR7GGGkjYp78g0Bcg_2dBNoOTyOTrHQt8GZrwmQfaDDPURlbwJfh4-5Oi80BvKOtlraoOQRceA1nOZKMr5uAPbnjMSknDkSfMPkofvhyhsRrO1oQqqTgRuGqU3oy0-pbcOsqczMu_glgpLQPL2ST6ZS13FSd0DUQB59bwgp8GPui2aqJvGdHz3FuwepouSvxTPcoV95bQs3Rlxr5Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"noe.garcia\",\r\n    \"email\" : \"noe@gmail.com\",\r\n    \"firstName\" : \"Noe\",\r\n    \"lastName\" : \"Garcia\",\r\n    \"password\" : \"1234\",\r\n    \"roles\": [\"admin\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/keycloak/user/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"keycloak",
+						"user",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar usuario por id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJIODZhY0UyUnJ1UHBjcmdmcHpRaUNCUjhtTDBMLTV0Mm9KbFUxYVFLbXZBIn0.eyJleHAiOjE2OTUzMjIzODEsImlhdCI6MTY5NTMyMjA4MSwianRpIjoiYTU5MjJjY2YtNzYwOS00ZWYxLWJjZmMtMjM0NWFhYmQyNmFkIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDkwL3JlYWxtcy9zcHJpbmctYm9vdC1yZWFsbS1kZXYiLCJhdWQiOlsicmVhbG0tbWFuYWdlbWVudCIsImFjY291bnQiXSwic3ViIjoiZjhlNjA0MmEtN2MyNi00ZTZmLWI1ZmItYjczNzc1ODI5Y2QwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic3ByaW5nLWNsaWVudC1hcGktcmVzdCIsInNlc3Npb25fc3RhdGUiOiIyZmE5NTczYy1iNWU3LTRiMTUtOTFhOC03ODYxNjdmZGM3M2YiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1zcHJpbmctYm9vdC1yZWFsbS1kZXYiLCJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsic3ByaW5nLWNsaWVudC1hcGktcmVzdCI6eyJyb2xlcyI6WyJhZG1pbl9jbGllbnRfcm9sZSJdfSwicmVhbG0tbWFuYWdlbWVudCI6eyJyb2xlcyI6WyJtYW5hZ2UtdXNlcnMiLCJ2aWV3LXVzZXJzIiwicXVlcnktZ3JvdXBzIiwicXVlcnktdXNlcnMiXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6IjJmYTk1NzNjLWI1ZTctNGIxNS05MWE4LTc4NjE2N2ZkYzczZiIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiUGVwZSBQZXJleiIsInByZWZlcnJlZF91c2VybmFtZSI6InBlcGUucGVyZXoiLCJnaXZlbl9uYW1lIjoiUGVwZSIsImZhbWlseV9uYW1lIjoiUGVyZXoiLCJlbWFpbCI6InBlcGVAZ21haWwuY29tIn0.BLsQBD355mT1nZGvNF0fxuFRRqCNFGXzcpEF_uv9L0SBlBa72HMPToT5eCgfsehIiKBf8pLBws2QY9BZAwn9zaMeM11-ZQGKkxDJG8Hgf41sxuGZYklU4kviVhF1SwczgjqXr5QDZJpL5iB3Hs4LXjYRT3xCiF8VPrGYvG0eetY41O_4RFcvDPRAHBc81VS0rzcam9tpq_ZQD4_ZI7I-z4o8pNZF6EK74isE3xWyY4eqPMjju25vAMYzpr9FIMkJNgZ6MHG9mv_AgTUWNjXZTxDJ7xn2f6sECDEkbvBCIK12aMqAuuZenSC6HAQinrpV3hZrzSsbzfR785xCe_VObg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"noe.garcia\",\r\n    \"email\" : \"noe@gmail.com\",\r\n    \"firstName\" : \"Noe\",\r\n    \"lastName\" : \"Garcia\",\r\n    \"password\" : \"1234\",\r\n    \"roles\": [\"admin\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/keycloak/user/update/31b9f039-8ca8-45b4-9d02-bfd74a86df32",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"keycloak",
+						"user",
+						"update",
+						"31b9f039-8ca8-45b4-9d02-bfd74a86df32"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar usuario por id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJIODZhY0UyUnJ1UHBjcmdmcHpRaUNCUjhtTDBMLTV0Mm9KbFUxYVFLbXZBIn0.eyJleHAiOjE2OTUzMjIzODEsImlhdCI6MTY5NTMyMjA4MSwianRpIjoiYTU5MjJjY2YtNzYwOS00ZWYxLWJjZmMtMjM0NWFhYmQyNmFkIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDkwL3JlYWxtcy9zcHJpbmctYm9vdC1yZWFsbS1kZXYiLCJhdWQiOlsicmVhbG0tbWFuYWdlbWVudCIsImFjY291bnQiXSwic3ViIjoiZjhlNjA0MmEtN2MyNi00ZTZmLWI1ZmItYjczNzc1ODI5Y2QwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic3ByaW5nLWNsaWVudC1hcGktcmVzdCIsInNlc3Npb25fc3RhdGUiOiIyZmE5NTczYy1iNWU3LTRiMTUtOTFhOC03ODYxNjdmZGM3M2YiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1zcHJpbmctYm9vdC1yZWFsbS1kZXYiLCJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsic3ByaW5nLWNsaWVudC1hcGktcmVzdCI6eyJyb2xlcyI6WyJhZG1pbl9jbGllbnRfcm9sZSJdfSwicmVhbG0tbWFuYWdlbWVudCI6eyJyb2xlcyI6WyJtYW5hZ2UtdXNlcnMiLCJ2aWV3LXVzZXJzIiwicXVlcnktZ3JvdXBzIiwicXVlcnktdXNlcnMiXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6IjJmYTk1NzNjLWI1ZTctNGIxNS05MWE4LTc4NjE2N2ZkYzczZiIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiUGVwZSBQZXJleiIsInByZWZlcnJlZF91c2VybmFtZSI6InBlcGUucGVyZXoiLCJnaXZlbl9uYW1lIjoiUGVwZSIsImZhbWlseV9uYW1lIjoiUGVyZXoiLCJlbWFpbCI6InBlcGVAZ21haWwuY29tIn0.BLsQBD355mT1nZGvNF0fxuFRRqCNFGXzcpEF_uv9L0SBlBa72HMPToT5eCgfsehIiKBf8pLBws2QY9BZAwn9zaMeM11-ZQGKkxDJG8Hgf41sxuGZYklU4kviVhF1SwczgjqXr5QDZJpL5iB3Hs4LXjYRT3xCiF8VPrGYvG0eetY41O_4RFcvDPRAHBc81VS0rzcam9tpq_ZQD4_ZI7I-z4o8pNZF6EK74isE3xWyY4eqPMjju25vAMYzpr9FIMkJNgZ6MHG9mv_AgTUWNjXZTxDJ7xn2f6sECDEkbvBCIK12aMqAuuZenSC6HAQinrpV3hZrzSsbzfR785xCe_VObg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/keycloak/user/delete/75fa78e2-392d-4c6c-a214-ed57f7d63221",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"keycloak",
+						"user",
+						"delete",
+						"75fa78e2-392d-4c6c-a214-ed57f7d63221"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar todos los datos en la tabla persons",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJIODZhY0UyUnJ1UHBjcmdmcHpRaUNCUjhtTDBMLTV0Mm9KbFUxYVFLbXZBIn0.eyJleHAiOjE2OTU0MDI3OTcsImlhdCI6MTY5NTQwMjQ5NywianRpIjoiMTNkZjU1YWUtODY0Ny00YmZhLThiN2QtMjczNjZiNDNlN2EwIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDkwL3JlYWxtcy9zcHJpbmctYm9vdC1yZWFsbS1kZXYiLCJhdWQiOlsicmVhbG0tbWFuYWdlbWVudCIsImFjY291bnQiXSwic3ViIjoiZjhlNjA0MmEtN2MyNi00ZTZmLWI1ZmItYjczNzc1ODI5Y2QwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic3ByaW5nLWNsaWVudC1hcGktcmVzdCIsInNlc3Npb25fc3RhdGUiOiJlNDljOTRjNC0xZjI0LTQxYzYtYWE4OS0xNTc4NzY4OThhYTIiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1zcHJpbmctYm9vdC1yZWFsbS1kZXYiLCJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsic3ByaW5nLWNsaWVudC1hcGktcmVzdCI6eyJyb2xlcyI6WyJhZG1pbl9jbGllbnRfcm9sZSJdfSwicmVhbG0tbWFuYWdlbWVudCI6eyJyb2xlcyI6WyJtYW5hZ2UtdXNlcnMiLCJ2aWV3LXVzZXJzIiwicXVlcnktZ3JvdXBzIiwicXVlcnktdXNlcnMiXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6ImU0OWM5NGM0LTFmMjQtNDFjNi1hYTg5LTE1Nzg3Njg5OGFhMiIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiUGVwZSBQZXJleiIsInByZWZlcnJlZF91c2VybmFtZSI6InBlcGUucGVyZXoiLCJnaXZlbl9uYW1lIjoiUGVwZSIsImZhbWlseV9uYW1lIjoiUGVyZXoiLCJlbWFpbCI6InBlcGVAZ21haWwuY29tIn0.UKONQG9Vzwd9kb_Ak0d9AirRMe-sRTErEwbA1pZtaeNaDOqxwA4-qjCDmInI-gYJNWckBYd6ub29lPR0QaxbflNPEErA8JCT-a6mc6Mi_EqCV2OWonhyLpAlO3k1l0Q_It5JPDn17w2an61lsQhm5CUJItdYHSysjRNCOGL601CudXo3bt61rPmHKED9avwg-Ezc0KZH8V9j9fca_inNT5IyEPnAhbucp90byVEEJ7BClMACtFcjFScb-tru2VYzd8QiBIfiDZx_WyE5TyVKcRfl7NgttOP1PgrQQhpvv3zNWpR8Sp-ljOFiHys5x3Boq6KtylYiUycHorN-ATNf0A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/keycloak/person/search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"keycloak",
+						"person",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear person en la tabla persons",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJIODZhY0UyUnJ1UHBjcmdmcHpRaUNCUjhtTDBMLTV0Mm9KbFUxYVFLbXZBIn0.eyJleHAiOjE2OTUzOTg4NzksImlhdCI6MTY5NTM5ODU3OSwianRpIjoiZjY1MjczNjEtNmY4ZC00YjI0LTllZmEtZTU0YmExMmQyOTM1IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDkwL3JlYWxtcy9zcHJpbmctYm9vdC1yZWFsbS1kZXYiLCJhdWQiOlsicmVhbG0tbWFuYWdlbWVudCIsImFjY291bnQiXSwic3ViIjoiZjhlNjA0MmEtN2MyNi00ZTZmLWI1ZmItYjczNzc1ODI5Y2QwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic3ByaW5nLWNsaWVudC1hcGktcmVzdCIsInNlc3Npb25fc3RhdGUiOiI1NDg1Njk0Zi1iY2UyLTQxMzAtYjVjNS02MDg2ODA4YWQ2NzYiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1zcHJpbmctYm9vdC1yZWFsbS1kZXYiLCJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsic3ByaW5nLWNsaWVudC1hcGktcmVzdCI6eyJyb2xlcyI6WyJhZG1pbl9jbGllbnRfcm9sZSJdfSwicmVhbG0tbWFuYWdlbWVudCI6eyJyb2xlcyI6WyJtYW5hZ2UtdXNlcnMiLCJ2aWV3LXVzZXJzIiwicXVlcnktZ3JvdXBzIiwicXVlcnktdXNlcnMiXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6IjU0ODU2OTRmLWJjZTItNDEzMC1iNWM1LTYwODY4MDhhZDY3NiIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiUGVwZSBQZXJleiIsInByZWZlcnJlZF91c2VybmFtZSI6InBlcGUucGVyZXoiLCJnaXZlbl9uYW1lIjoiUGVwZSIsImZhbWlseV9uYW1lIjoiUGVyZXoiLCJlbWFpbCI6InBlcGVAZ21haWwuY29tIn0.FWMH9AMnHLF3xgx7flmuhUlxKFVCzU14ASX7houy1YSKRbQdUP1MU-D9ZDBe2_Zw5z8Q9OMjDIHiCfky9wHdOYLxCzYDFza9JcggjCGrifP8ASGcg5LfuQtwP2gDIHSvgGHtkvGvGjsYPYO3D1dCc91Jvjn5JEb9mwAXUn1QFDVNPD7XZRE40Wu5tQyxjn1y_aLO1q77bzd1oC7R01ZnJrGkNWxdyBX04ubo-CKhvQsM-i-2vlrFvBU9NVL345xgMmX4bRDYa0GSd9ZMn_8mujBLGQXD0QiKGi2ZMxqHyD9KzZrL62DiJUlouYqCkeiHqe9IiAR6P5xasVqLUdh3iA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Ramon\",\r\n    \"lastName\":\"Sancho\",\r\n    \"age\":40,\r\n    \"email\":\"pepe@gmail.com\",\r\n    \"phone\":\"678954123\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/keycloak/person/savePerson",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"keycloak",
+						"person",
+						"savePerson"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar person por id en la tabla persons",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJIODZhY0UyUnJ1UHBjcmdmcHpRaUNCUjhtTDBMLTV0Mm9KbFUxYVFLbXZBIn0.eyJleHAiOjE2OTUzOTk0MjYsImlhdCI6MTY5NTM5OTEyNiwianRpIjoiNWJjZjNkNjQtZGRkMi00NDhiLThhN2QtM2U0YTg5YWZlMThkIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDkwL3JlYWxtcy9zcHJpbmctYm9vdC1yZWFsbS1kZXYiLCJhdWQiOlsicmVhbG0tbWFuYWdlbWVudCIsImFjY291bnQiXSwic3ViIjoiZjhlNjA0MmEtN2MyNi00ZTZmLWI1ZmItYjczNzc1ODI5Y2QwIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic3ByaW5nLWNsaWVudC1hcGktcmVzdCIsInNlc3Npb25fc3RhdGUiOiJhMzJhNDhiMC00YzZiLTQ5YmQtOTE3Ny1iZTI2YTcyZDdiY2YiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1zcHJpbmctYm9vdC1yZWFsbS1kZXYiLCJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsic3ByaW5nLWNsaWVudC1hcGktcmVzdCI6eyJyb2xlcyI6WyJhZG1pbl9jbGllbnRfcm9sZSJdfSwicmVhbG0tbWFuYWdlbWVudCI6eyJyb2xlcyI6WyJtYW5hZ2UtdXNlcnMiLCJ2aWV3LXVzZXJzIiwicXVlcnktZ3JvdXBzIiwicXVlcnktdXNlcnMiXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6ImEzMmE0OGIwLTRjNmItNDliZC05MTc3LWJlMjZhNzJkN2JjZiIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiUGVwZSBQZXJleiIsInByZWZlcnJlZF91c2VybmFtZSI6InBlcGUucGVyZXoiLCJnaXZlbl9uYW1lIjoiUGVwZSIsImZhbWlseV9uYW1lIjoiUGVyZXoiLCJlbWFpbCI6InBlcGVAZ21haWwuY29tIn0.fCFEEbIlIY9YlDw9RTua5sfdNOgGy6UpaZRH5I-4D6LgoaFyV1uQVfhl_Zc0t2Eb7_Gwl3oMtCwdeCQr36CQoiad0cvJ2Ls0znTZPIOGjfkJMz4nwTzzKzIXSDuQEhGtlB_mtaq6k64dtVaXNybuKPi5T8cUoAdurCeJeF3jnMCLAcDMLgm7jEBXiLHnj7NG8dRlC1ToRJepWBEwygP_OYIvkraBas2OUBrZnFaMRrr1kWKkHM5v_6xO03I2LTaAFEgbcw_vJy-pAiwhRZhwl9OeRSd9wjVVuzFpQBjcPvY6n8BvZQaDKHgE0JIeJ48-Ymv21qvPTCHSdKd92rsTVg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/keycloak/person/deletePerson",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"keycloak",
+						"person",
+						"deletePerson"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

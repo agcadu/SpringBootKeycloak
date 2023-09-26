@@ -1,0 +1,52 @@
+version: "3.9"
+
+services:
+  spring_boot_keycloak:
+    container_name: spring_boot_keycloak
+    image: spring_boot_keycloak
+    build: .
+    ports:
+      - 8080:8080
+    environment:
+      - DATABASE_URL=jdbc:postgresql://postgres_db:5432/spring_keycloak
+      - DATABASE_USERNAME=postgres
+      - DATABASE_PASSWORD=postgres
+      - JWT_ISSUER=http://localhost:9090/realms/spring-boot-realm-dev
+      - JWT_SET=http://localhost:9090/realms/spring-boot-realm-dev/protocol/openid-connect/certs
+      - KEYCLOAK_SERVER_URL=http://localhost:9090
+      - KEYCLOAK_REALM_NAME=spring-boot-realm-dev
+      - KEYCLOAK_REALM_MASTER=master
+      - KEYCLOAK_ADMIN_CLI=admin-cli
+      - KEYCLOAK_USER_CONSOLE=admin
+      - KEYCLOAK_CONSOLE_PASSWORD=admin
+      - KEYCLOAK_CLIENT_SECRET=I57vUsZLqAiUZtPacD2e253xUfyHWkal
+    depends_on:
+      - postgres_db
+      - keycloak
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:22.0.3
+    ports:
+      - "9090:8080"
+    environment:
+      - KEYCLOAK_MODE=development
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+      - KEYCLOAK_IMPORT=/opt/keycloak/data/import/exported_keycloak_config.json
+      - KEYCLOAK_STRICT_HOSTNAME_RESOLUTION=false
+    entrypoint: [ "/opt/keycloak/bin/kc.sh", "start", "--hostname=localhost", "--http-enabled=true", "--https-port=0" ]
+    volumes:
+      - ./exported_keycloak_config.json:/opt/keycloak/data/import/exported_keycloak_config.json
+
+  postgres_db:
+    container_name: postgres_db
+    image: postgres:12
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=spring_keycloak
+
+
+
